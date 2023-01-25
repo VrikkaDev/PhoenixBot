@@ -1,0 +1,18 @@
+{
+  "mrhello": {
+    "role_needed": "mrRole",
+    "help": "says cool mr, not",
+    "allowed_channels": {
+      "1067491904033402983": "general"
+    },
+    "response": "uu mr hello to you my friend"
+  },
+  "mrbread": {
+    "role_needed": "mrRole",
+    "help": "notsaying",
+    "allowed_channels": {
+      "1067491904033402983": "general"
+    },
+    "response": "oooojaa mr bread"
+  }
+}

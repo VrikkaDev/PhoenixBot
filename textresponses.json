@@ -1,0 +1,27 @@
+{
+    "Oh my Go": {
+        "mode": "contains",
+        "case_sensitive": "False",
+        "response":"Don't you mean, 'Oh my Bosch'?"
+    },
+     "OMG": {
+        "mode": "contains",
+        "case_sensitive": "False",
+        "response":"Don't you mean, 'Oh my Bosch'?"
+    },
+    "cleb":{
+        "mode": "contains",
+        "case_sensitive": "False",
+        "response":"I is here"
+    },
+    "duck":{
+        "mode": "equals",
+        "case_sensitive": "False",
+        "response":"mr"
+    },
+    "Thanks you": {
+        "mode": "contains",
+        "case_sensitive": "False",
+        "response":"No, you cannot say 'Thanks You'"
+    }
+}
