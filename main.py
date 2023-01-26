@@ -37,6 +37,10 @@ CommandUtils.Init(commandResponses, bot, tree)
 @bot.event
 async def on_ready():
     await tree.sync(guild=discord.Object(id=1067491904033402980))
+
+    activity = discord.Game(name="PhoenixSMP", type=3)
+    await bot.change_presence(status=discord.Status.online, activity=activity)
+
     print(f'{bot.user} is connected and running')
 
 
