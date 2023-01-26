@@ -1,18 +1,100 @@
 {
   "pseed": {
-    "role_needed": "1067751102151401523",
-    "description": "Tells phoenix seed",
-    "allowed_channels": {
-      "1067491904033402983": "general"
+    "role_needed": {
+        "844182588112371712":"Phoenix"
     },
-    "response": "the seed is []"
+    "description": "Obtain Minecraft world seed for Phoenix server",
+    "allowed_channels": {
+      "844183310179368990": "phoenix-general"
+    },
+    "response": {
+        "text": "Phoenix seedmap",
+        "embedded": "True",
+        "link": "https://www.chunkbase.com/apps/seed-map#3259590416100447320",
+        "color": "0x00aaff",
+        "embedded_description": "325959041610044732"
+    }
   },
-  "pcip": {
-    "role_needed": "1067751102151401523",
-    "description": "Tells planetcraft ip",
-    "allowed_channels": {
-      "1067491904033402983": "general"
+  "pc7": {
+    "role_needed": {
+        "1053418810054553680":"SMPv5"
     },
-    "response": "the planetcraft ip is something"
+    "description": "Obtain IP address for Planet Craft Season 7: SMPv5",
+    "allowed_channels": {
+      "969235841169899600": "pc7-general"
+    },
+    "response": {
+        "text": "Planet Craft Season 7: SMPv5 (***1.19.2***): ```smpv5.phoenixnetwork.tech``",
+        "embedded": "false",
+        "link": "",
+        "color": "0xFF5733",
+        "embedded_description": ""
+    }
+  },
+  "pcopy":{
+    "role_needed": {
+        "844182588112371712":"Phoenix"
+    },
+    "description": "Obtain IP address for Phoenix Creative-copy",
+    "allowed_channels": {
+      "844183310179368990": "phoenix-general"
+    },
+    "response": {
+        "text": "Phoenix Creative-Copy (***1.19.2***): ```pcc.phoenixnetwork.tech```",
+        "embedded": "false",
+        "link": "",
+        "color": "0xFF5733",
+        "embedded_description": ""
+    }
+  },
+  "extra":{
+    "role_needed": {
+      "1053418810054553680": "SMPv5",
+      "844182588112371712": "Phoenix"
+    },
+    "description": "Obtain IP address for Phoenix Network creative multiplayer sserver",
+    "allowed_channels": {
+      "844183310179368990": "phoenix-general",
+      "969235841169899600": "pc7-general"
+    },
+    "response": {
+        "text": "Phoenix Extra (**1.19.2**): ```extra.phoenixnetwork.tech```",
+        "embedded": "false",
+        "link": "",
+        "color": "0xFF5733",
+        "embedded_description": ""
+    }
+  },
+  "psurvival":{
+    "role_needed": {
+        "844182588112371712":"Phoenix"
+    },
+    "description": "Obtain IP address for Phoenix survival server",
+    "allowed_channels": {
+      "844183310179368990": "phoenix-general"
+    },
+    "response": {
+        "text": "Phoenix Survival (***1.19.2***): ```smp.phoenixnetwork.tech```",
+        "embedded": "false",
+        "link": "",
+        "color": "0xFF5733",
+        "embedded_description": ""
+    }
+  },
+  "pc7copy":{
+    "role_needed": {
+        "1053418810054553680":"SMPv5?"
+    },
+    "description": "Obtain IP address for Planet Craft Season 7: Creative-Copy",
+    "allowed_channels": {
+      "969235841169899600": "pc7-general"
+    },
+    "response": {
+        "text": "Planet Craft Season 7: CMPv5 (***1.19.2***): ```smpcopy.phoenixnetwork.tech```",
+        "embedded": "false",
+        "link": "",
+        "color": "0xFF5733",
+        "embedded_description": ""
+    }
   }
 }

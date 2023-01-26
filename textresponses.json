@@ -12,16 +12,31 @@
     "cleb":{
         "mode": "contains",
         "case_sensitive": "False",
-        "response":"I is here"
+        "response":"His grammpa was a great man, he fought in the Great Wars against the Incans. He saved so many in his plight for realigous domination... er- I mean- enlightment"
     },
     "duck":{
         "mode": "equals",
         "case_sensitive": "False",
-        "response":"mr"
+        "response":"MrDuck is so handsome, cool, and not at all narcissistic☺"
     },
     "Thanks you": {
         "mode": "contains",
         "case_sensitive": "False",
         "response":"No, you cannot say 'Thanks You'"
+    },
+    "420": {
+        "mode": "contains",
+        "case_sensitive": "False",
+        "response":"420, whatchu smokin?"
+    },
+    "69": {
+        "mode": "contains",
+        "case_sensitive": "False",
+        "response":"Nice"
+    },
+    "Joe": {
+        "mode": "contains",
+        "case_sensitive": "False",
+        "response":"Unless you drink tea, don't talk to me"
     }
 }

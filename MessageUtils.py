@@ -22,7 +22,7 @@ def NeedToAnswer(message) -> Answer:
         value = tr[key]
         case_sensitive = True
 
-        if value["case_sensitive"].lower() == "false":
+        if Lowercase(value["case_sensitive"]) == "false":
             case_sensitive = False
 
         key_text = key
@@ -43,3 +43,13 @@ def NeedToAnswer(message) -> Answer:
                 a.respondText = value["response"]
                 break
     return a
+
+
+def Lowercase(text) -> str:
+    out = ""
+    for idx, chr in enumerate(text):
+        c = chr
+        if 'Z' >= chr >= 'A':
+            c = c.lower()
+        out = out + str(c)
+    return ''.join(out)

@@ -2,7 +2,10 @@ from discord.ext import commands
 import discord
 from typing import Union
 
+from discord.ext.commands._types import Check
+
 import ConfigUtils
+import MessageUtils
 
 global cr, bot, tree
 cr = {}
@@ -24,17 +27,23 @@ def _getChannels_(value) -> list:
 
 
 def _hasRole_(value, roles: discord.Member) -> bool:
-
     r = False
-    needed = str(value["role_needed"])
+    needed = value["role_needed"].keys()
 
-    i: discord.Role
-    for i in roles:
-        if str(i.id) == needed:
-            r = True
+    for x in needed:
+        i: discord.Role
+        for i in roles:
+            if str(i.id) == str(x):
+                r = True
+                break
+        if r:
             break
 
     return r
+
+
+def has_roles(item: Union[int, str], /) -> Check[any]:
+    return None
 
 
 def register_commands():
@@ -44,7 +53,7 @@ def register_commands():
         @tree.command(
             name=str(key),
             description=str(value["description"]),
-            guild=discord.Object(id=ConfigUtils.GetGuild())
+            guild=discord.Object(id=ConfigUtils.GetGuild()),
         )
         async def execute(ctx: discord.Interaction):
 
@@ -60,4 +69,11 @@ def register_commands():
                 return
 
             response = val["response"]
-            await ctx.response.send_message(response)
+
+            if MessageUtils.Lowercase(response["embedded"]) == "false":
+                await ctx.response.send_message(response["text"])
+                return
+            embed = discord.Embed(title=response["text"], url=response["link"],
+                                  description=response["embedded_description"],
+                                  color=discord.Color.from_str(response["color"]))
+            await ctx.response.send_message(embed=embed)
