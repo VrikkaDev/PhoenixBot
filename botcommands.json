@@ -1,18 +1,18 @@
 {
-  "mrhello": {
-    "role_needed": "mrRole",
-    "help": "says cool mr, not",
+  "pseed": {
+    "role_needed": "1067751102151401523",
+    "description": "Tells phoenix seed",
     "allowed_channels": {
       "1067491904033402983": "general"
     },
-    "response": "uu mr hello to you my friend"
+    "response": "the seed is []"
   },
-  "mrbread": {
-    "role_needed": "mrRole",
-    "help": "notsaying",
+  "pcip": {
+    "role_needed": "1067751102151401523",
+    "description": "Tells planetcraft ip",
     "allowed_channels": {
       "1067491904033402983": "general"
     },
-    "response": "oooojaa mr bread"
+    "response": "the planetcraft ip is something"
   }
 }

@@ -6,16 +6,22 @@ from discord.ext import commands
 from dotenv import load_dotenv
 
 import CommandUtils
+import ConfigUtils
 import FileUtils
 import MessageUtils
 
 load_dotenv()
 TOKEN = os.getenv('DISCORD_TOKEN')
-GUILD = os.getenv('DISCORD_GUILD')
+ConfigUtils.Init()
 
 intent = discord.Intents.all()
 
-bot = commands.Bot(command_prefix='/')
+bot = commands.Bot(
+    command_prefix='/',
+    intents=intent
+)
+
+tree = bot.tree
 
 global textResponses
 textResponses = FileUtils.json_to_dict("textresponses.json")
@@ -25,24 +31,28 @@ MessageUtils.Init(textResponses)
 global commandResponses
 commandResponses = FileUtils.json_to_dict("botcommands.json")
 
-CommandUtils.Init(commandResponses, bot)
+CommandUtils.Init(commandResponses, bot, tree)
 
 
 @bot.event
 async def on_ready():
+    await tree.sync(guild=discord.Object(id=1067491904033402980))
     print(f'{bot.user} is connected and running')
 
 
 @bot.event
 async def on_message(message):
+
     if message.author == bot.user:
         return
 
     a = MessageUtils.NeedToAnswer(message)
 
     if not a.willRespond:
+        await bot.process_commands(message)
         return
 
+    await bot.process_commands(message)
     await message.channel.send(a.respondText)
 
 
