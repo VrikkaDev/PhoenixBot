@@ -30,6 +30,7 @@ def _create_channel_mention_(ids: list) -> str:
     r = ""
     for _id in ids:
         r += ("<#" + _id + ">" + " ,")
+    r[:-1]
     return r
 
 
