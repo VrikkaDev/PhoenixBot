@@ -1,3 +1,5 @@
+import time
+
 global tr
 tr = {}
 
@@ -16,6 +18,12 @@ def NeedToAnswer(message) -> Answer:
     text = message.content
 
     a = Answer()
+
+    if Lowercase(text) == "time":
+        a.willRespond = True
+        curr_time = round(time.time() * 1000)
+        a.respondText = str(curr_time)
+        return a
 
     for key in tr.keys():
 

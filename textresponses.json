@@ -38,5 +38,10 @@
         "mode": "contains",
         "case_sensitive": "False",
         "response":"Unless you drink tea, don't talk to me"
+    },
+    "laws": {
+        "mode": "equals",
+        "case_sensitive": "False",
+        "response":"Law #1: If you like bread you are cool\nLaw #2: To achieve great thing you dont need to be smart, you just need to do stuff.\nLaw #3: No one was cool when they were born except lu.\nLaw #4: Well planned if half done\nLaw #5: There is 9 levels of craziness and im all of them\nLaw #6: You can have GREAT bread, but its useless if you dont know how to use it\nLaw #7: If you teach someone to be non-bread, dont expect him to turn out to be bread\nLaw #8: Why do something today, if you can leave it undone.\nLaw #9: There stomach where wrestling\nLaw #10: It's worth trying to catch big bread even if you don't catch them\nLaw #11: A fool is always dissatisfied, he has a lack that cannot be addressed\nLaw #12: You can be proud, but not mean\nLaw #13: Don't incite a fool\nLaw #14: Being kind is almost as cool as eating bread 🙂\nLaw #15: You cant say Thanks you!"
     }
 }

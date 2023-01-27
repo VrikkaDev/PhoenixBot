@@ -22,13 +22,24 @@ def Init(_commandResponses, _bot, _tree):
     register_commands()
 
 
-def _getChannels_(value) -> list:
-    return list(value["allowed_channels"].keys())
+def _get_channels_(value) -> dict:
+    return value["allowed_channels"]
 
 
-def _hasRole_(value, roles: discord.Member) -> bool:
+def _create_channel_mention_(ids: list) -> str:
+    r = ""
+    for _id in ids:
+        r += ("<#" + _id + ">" + " ,")
+    return r
+
+
+def _get_roles_(value) -> dict:
+    return value["role_needed"]
+
+
+def _has_role_(value, roles: discord.Member) -> bool:
     r = False
-    needed = value["role_needed"].keys()
+    needed = _get_roles_(value).keys()
 
     for x in needed:
         i: discord.Role
@@ -40,10 +51,6 @@ def _hasRole_(value, roles: discord.Member) -> bool:
             break
 
     return r
-
-
-def has_roles(item: Union[int, str], /) -> Check[any]:
-    return None
 
 
 def register_commands():
@@ -59,13 +66,17 @@ def register_commands():
 
             val = cr[ctx.command.name]
 
-            if not _hasRole_(val, ctx.user.roles):
+            if not _has_role_(val, ctx.user.roles):
                 await ctx.response.send_message("You do not have the required role to execute this command.")
                 return
 
-            if not _getChannels_(val).__contains__(str(ctx.channel_id)):
-                await ctx.response.send_message("This command is not available in this channel. Please try a different "
-                                                "command or channel.")
+            channels: dict = _get_channels_(val)
+
+            channeltexts: list = _create_channel_mention_(channels.keys())
+
+            if not channels.keys().__contains__(str(ctx.channel_id)):
+                await ctx.response.send_message("This command is not available in this channel."
+                                                " Please use this command in " + str(channeltexts))
                 return
 
             response = val["response"]
